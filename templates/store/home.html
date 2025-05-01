@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Furniture Store</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        .product { border: 1px solid #ddd; padding: 15px; margin: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Welcome to our Furniture Store</h1>
+    
+    <h2>Categories</h2>
+    <ul>
+        {% for category in categories %}
+        <li>{{ category.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Featured Products</h2>
+    <div class="products">
+        {% for product in products %}
+        <div class="product">
+            <h3>{{ product.name }}</h3>
+            <p>Price: ${{ product.price }}</p>
+            {% if product.image %}
+            <img src="{{ product.image.url }}" width="200">
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
