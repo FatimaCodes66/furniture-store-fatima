@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     'account.apps.AccountConfig',
     'django.contrib.humanize',
-
 ]
 
 MIDDLEWARE = [
@@ -53,10 +52,10 @@ ROOT_URLCONF = 'backend.urls'
 
 TEMPLATES = [
     {
-      'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'store', 'templates'),
-            os.path.join(BASE_DIR, 'templates'), 
+            os.path.join(BASE_DIR, 'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -110,13 +109,12 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
-#  Media files (user-uploaded content like blog images)
+# Media files (user-uploaded content like blog images)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 # Base URL
 BASE_URL = 'http://localhost:8000'
