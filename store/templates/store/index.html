@@ -1,0 +1,43 @@
+{% extends "store/base.html" %}
+{% block content %}
+{% load static %}
+{% static 'img' as baseUrl %}
+
+<main>
+
+    <div class="hero" id="search">
+        <form class="form-inline" action="{% url 'search' %}" method="GET">
+            {% csrf_token %}
+            <div class="search">
+                <input class="input-search" type="text" name="query" placeholder="Search Products ex: sofa, bed.." required />
+                <button type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+
+    <section class="container categories">
+        <h2 class="text-center">Product Categories</h2>
+
+        <div class="category-list">
+            {% for category in categorys %}
+                <div class="category">
+                    <img src="{{ category.img.url }}" alt="Category Image" />
+                    <a href="{% url 'store' %}">{{ category.title }}</a>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="about-us">
+        <div class="container about-us-grid">
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>
+                    This furniture store project was created by a student as part of an internship. It is a basic online platform that lets users browse various furniture types, search products, and explore different categories. The goal was to make it simple and useful for people searching for furniture online.
+                </p>
+            </div>
+        </div>
+    </section>
+
+</main>
+{% endblock content %}

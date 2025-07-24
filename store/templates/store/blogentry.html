@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% static 'img' as baseUrl %}
+
+<main class="main-content container">
+    <h2 class="text-center">{{ blog_post.title }}</h2>
+
+    <article class="entry blog-entry-content">
+        <div class="image">
+            {% if blog_post.image %}
+                <img src="{{ blog_post.image.url }}" alt="Blog Image" width="600">
+            {% endif %}
+        </div>
+
+        <div class="blog-content">
+            <div class="entry-meta">
+                <p>Date: <span>{{ blog_post.created_at }}</span></p>
+            </div>
+
+            <div class="entry-description">
+                <p>{{ blog_post.content }}</p>
+            </div>
+        </div>
+    </article>
+
+    <div class="mt-3">
+        <a href="/blog/" class="btn btn-secondary">← Back to All Blog Posts</a>
+    </div>
+</main>
+
+{% endblock content %}

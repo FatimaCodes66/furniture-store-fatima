@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="main-content container">
+    <h2 class="text-center">Our Blog</h2>
+
+    {% if blogs %}
+        {% for blog in blogs %}
+            <div class="blog-post mb-5">
+                <h3>{{ blog.title }}</h3>
+
+                {% if blog.image %}
+                    <img src="{{ blog.image.url }}" alt="{{ blog.title }}" style="max-width: 400px;" class="img-fluid mb-3">
+                {% endif %}
+
+                <p>{{ blog.content|truncatechars:200 }}</p>
+                <small>Posted on: {{ blog.created_at }}</small>
+                <br><br>
+
+                <!-- "Read More" link -->
+                <a href="{% url 'blog_entry' blog.id %}" class="btn btn-primary">Read More →</a>
+                <hr>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No blog entries available yet.</p>
+    {% endif %}
+</main>
+{% endblock content %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% static 'img' as baseUrl %}
+
+<main class="main-content container">
+    <h2 class="text-center">Search Results for "{{ query }}":</h2>
+    
+    <div class="product-list">
+        {% for product in products %}
+        <div class="product-item">
+            <div class="product">
+                {% if product.offer %}
+                    <div class="special-offer text-center">
+                        <a href="#" style="color: #fff;">Special Offer</a>
+                    </div>
+                {% endif %}
+                <img src="{{ product.img.url }}" alt="Product Image">
+            </div>
+
+            <div class="product-details">
+                <h3>{{ product.title }}</h3>
+                <p>{{ product.desc }}</p>
+                <p class="price">${{ product.price }}</p>
+                {% if user.is_authenticated %}
+                    <a class="btn" href="{% url 'add' product.id %}">Add to Cart</a>
+                {% else %}
+                    <a class="btn" href="{% url 'login' %}">Add to Cart</a>
+                {% endif %}
+            </div> <!-- End of product details -->
+        </div> <!-- End of product item -->
+        {% empty %}
+        <p>No products found matching your search.</p>
+        {% endfor %}
+    </div> <!-- End of product list -->
+</main>
+
+{% endblock content %}

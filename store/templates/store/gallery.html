@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+
+<main class="main-content container">
+    <h2 class="text-center mb-4">Gallery</h2>
+
+    <div class="row">
+        {% for gallery in galleries %}
+            <div class="col-md-4 mb-4">
+                <a href="{{ gallery.img.url }}" target="_blank">
+                    <img src="{{ gallery.img.url }}" alt="Gallery Image" class="img-fluid rounded shadow-sm">
+                </a>
+            </div>
+        {% empty %}
+            <p class="text-center">No images available in the gallery.</p>
+        {% endfor %}
+    </div>
+</main>
+
+{% endblock content %}

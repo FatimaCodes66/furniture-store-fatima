@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="container mt-5">
+    <h2>{{ blog.title }}</h2>
+
+    {% if blog.image %}
+        <img src="{{ blog.image.url }}" class="img-fluid mb-3" alt="{{ blog.title }}">
+    {% endif %}
+
+    <p>{{ blog.content }}</p>
+
+    <small>Posted on: {{ blog.created_at }}</small>
+</main>
+{% endblock content %}

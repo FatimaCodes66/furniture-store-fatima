@@ -1,0 +1,43 @@
+{% extends "store/base.html" %}
+{% block content %}
+{% load static %}
+{% static 'img' as baseUrl %}
+
+{% if not user.is_authenticated %}
+<div class="log">
+    <h1>Login to explore!</h1>
+</div>
+{% endif %}
+
+<form class="formulario" action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    <fieldset>
+        <legend>Log in</legend>
+
+        <div class="campo">
+            <label for="username">Username:</label>
+            <input class="input" id="username" type="text" name="username" placeholder="Enter Username" required>
+        </div>
+
+        <div class="campo">
+            <label for="password">Password:</label>
+            <input class="input" id="password" type="password" name="password" placeholder="Enter Password" required>
+        </div>
+
+        <div class="links">
+            <a href="#">Forgot your password?</a> |
+            <a href="{% url 'signup' %}">Don't have an account?</a>
+        </div>
+    </fieldset>
+
+    <center>
+        <input class="btn" type="submit" value="LOG IN">
+        <div class="message">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    </center>
+</form>
+
+{% endblock content %}
