@@ -1,75 +1,65 @@
-# E-commerce-Furniture-App-with-Django
+#   Furnish-Zone – E-commerce Furniture Store (Django + MongoDB)
 
-## 🔴 Live Demo Video
+A student project developed using Django and MongoDB Atlas.  
+This furniture store app allows users to browse, search, filter, and purchase furniture online.  
+Includes cart functionality, category filters, and admin controls.
 
-[Watch the Demo on Google Drive](https://drive.google.com/file/d/1ZlkDs420UxZ-xbbkrb1O004vJ6JXjC-3/view?usp=sharing)
+##   Project Demo Video
+[Watch Demo on Google Drive](https://drive.google.com/file/d/1ZlkDs420UxZ-xbbkrb1O004vJ6JXjC-3/view?usp=sharing)
 
 
-## Functions
+##   Features
 
-### Admin
-- Create Admin account and Login.
-- Can add new products, blogs and all required models.
+###    Admin Panel
+- Add, update, and delete furniture products.
+- Manage user messages and orders.
 
-### User
-- Create user login (User will receive confirmation mail).
-- Can add products to cart.
-- Can filter products upon its's category, min-max price and offers.
-- Can search for paticular products.
-- Can send message to the admin using. 
-- Can view Gallery.
-- Can read Blogs.
+###   User Functionality
+- Register and login/logout.
+- Browse all furniture products.
+- Search by keyword (e.g., sofa, bed).
+- Filter by category (e.g., Office, Bedroom).
+- View product details.
+- Add products to cart.
+- Checkout placeholder available.
+- Contact form to message admin.
+- View image gallery.
 
-## HOW TO RUN THIS PROJECT
 
-### Prerequisites
-- Python 3.12.0 installed (Ensure to select "Add to Path" during installation)
+##   Technologies Used
 
-### Steps
-1. Download the project ZIP folder and extract it.
-2. Open your terminal or command prompt.
+- **Backend**: Django 5.0.3
+- **Database**: MongoDB Atlas (via Djongo)
+- **Frontend**: HTML, CSS, Bootstrap, Django Templates
+- **Others**: Django Admin, Humanize Filters
 
-3. Install project dependencies by executing the following command:
-```
+
+
+##    How to Run the Project Locally
+
+###   Prerequisites
+- Python 3.12 installed
+- Internet connection to access MongoDB Atlas
+- Git (optional)
+
+###   Installation Steps
+
+1. **Clone or Download the Project**:
+
+git clone https://github.com/FatimaCodes66/furniture-store-fatima.git
+cd furniture-store-fatima
+
+2. **Install Required Packages**:
 python -m pip install -r requirements.txt
-```
-```
-cd path/to/project/folder
-```
-```
+
+3. **Run Migrations**:
 py manage.py makemigrations
-```
-```
 py manage.py migrate
-```
-```
+
+4. **Run the Server**:
 py manage.py runserver
-```
-Once the server is running, open your web browser and enter the following URL:
-```
+
+5. Open your browser and go to:
 http://127.0.0.1:8000/
-```
 
-These instructions provide clearer steps, organize the commands logically, and include a section on prerequisites for better understanding.
-
-### CHANGES REQUIRED FOR CONTACT US PAGE
-In settins.py file, You have to give your email and password<br>
-EMAIL_HOST_USER = 'youremail@gmail.com'<br>
-EMAIL_HOST_PASSWORD = 'your email password'<br>
-EMAIL_RECEIVING_USER = 'youremail@gmail.com'<br>
-
-### CHANGES REQUIRED FOR DATABASE MANAGEMENT
-In settins.py file, You have to give your username and password<br>
-DATABASES = {<br>
-    'default': {<br>
-        'ENGINE': 'django.db.backends.postgresql',<br>
-        'NAME': 'DB Name',<br>
-        'USER':'postgres',<br>
-        'PASSWORD':'Ypur password',<br>
-        'HOST':'localhost'<br>
-    }<br>
-}<br>
-
-## Contact & Feedback
-Email: christelpeeris@gmail.com
 
