@@ -1,8 +1,9 @@
 # E-commerce-Furniture-App-with-Django
 
-## Live Demo:
+## 🔴 Live Demo Video
 
-https://github.com/ChristelPeerisR/E-commerce-Furniture-App-with-Django/assets/83603996/b71c7759-c980-4458-9820-7300f4e5911c
+[Watch the Demo on Google Drive](https://drive.google.com/file/d/1ZlkDs420UxZ-xbbkrb1O004vJ6JXjC-3/view?usp=sharing)
+
 
 ## Functions
 
